@@ -1,4 +1,4 @@
 package by.atrushkevich.shape.parser;
 
-public class Parser {
+public class DataParser {
 }

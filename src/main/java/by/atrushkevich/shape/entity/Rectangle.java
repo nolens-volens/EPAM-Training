@@ -1,9 +1,11 @@
 package by.atrushkevich.shape.entity;
 
 
+import static by.atrushkevich.shape.generator.IdGenerator.generateId;
+
 public class Rectangle {
 
-    private int rectangleId;
+    private long rectangleId;
     private Point point;
     private int height;
     private int width;
@@ -12,15 +14,15 @@ public class Rectangle {
     }
 
     public Rectangle(Point point) {
-        this.rectangleId = generator.generateId();
+        this.rectangleId = generateId();
         this.point = point;
     }
 
-    public void setRectangleId(int rectangleId) {
+    public void setRectangleId(long rectangleId) {
         this.rectangleId = rectangleId;
     }
 
-    public int getRectangleId() {
+    public long getRectangleId() {
         return rectangleId;
     }
 }

@@ -1,4 +1,4 @@
 package by.atrushkevich.shape.entity;
 
-public class SquareTest {
+public class RectangleTest {
 }

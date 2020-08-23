@@ -1,6 +1,8 @@
 package by.atrushkevich.shape.entity;
 
 
+import static by.atrushkevich.shape.generator.IdGenerator.generateId;
+
 public class Point {
 
     private long pointId;
@@ -11,7 +13,7 @@ public class Point {
     }
 
     public Point(double coordinateX, double coordinateY) {
-        this.pointId = generator.generateId();
+        this.pointId = generateId();
         this.coordinateX = coordinateX;
         this.coordinateY = coordinateY;
 
