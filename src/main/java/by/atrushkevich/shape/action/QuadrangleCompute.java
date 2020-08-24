@@ -9,12 +9,12 @@ public class QuadrangleCompute {
 
     private static final Logger logger = LogManager.getLogger();
 
-    public double area() {
+    public double areaCompute() {
         logger.log(Level.INFO, "The AREA of the quadrangle is computed");
         return 0.0;
     }
 
-    public double perimeter() {
+    public double perimeterCompute() {
         logger.log(Level.INFO, "The PERIMETER of the quadrangle is computed");
         return 0.0;
     }
