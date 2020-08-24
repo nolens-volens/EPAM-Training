@@ -21,6 +21,4 @@ public class IdGenerator {
     public static void setId(long id) {
         counter = id;
     }
-
-
 }
