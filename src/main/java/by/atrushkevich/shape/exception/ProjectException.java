@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class ProjectException extends Exception {
 
-    private static final Logger logger = LogManager.getLogger();
+  static final Logger logger = LogManager.getLogger();
 
     public ProjectException() {
     }

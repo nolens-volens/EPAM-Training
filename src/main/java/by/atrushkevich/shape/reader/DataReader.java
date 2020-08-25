@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 
 public class DataReader {
 
-    private static final Logger logger = LogManager.getLogger();
+   static final Logger logger = LogManager.getLogger();
 
     public List<String> readData(String filePath) {
         List<String> lines = null;
