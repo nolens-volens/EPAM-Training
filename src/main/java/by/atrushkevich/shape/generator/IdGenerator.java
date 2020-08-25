@@ -1,6 +1,5 @@
 package by.atrushkevich.shape.generator;
 
-
 public class IdGenerator {
 
     private static final long MIN_ID = 1;

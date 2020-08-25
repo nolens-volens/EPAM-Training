@@ -1,6 +1,5 @@
 package by.atrushkevich.shape.entity;
 
-
 import static by.atrushkevich.shape.generator.IdGenerator.generateId;
 
 public class Quadrangle {
@@ -10,7 +9,6 @@ public class Quadrangle {
     private Point b;
     private Point c;
     private Point d;
-
 
     public Quadrangle() {
         /* Here I'd like to realise auto generate of Points value

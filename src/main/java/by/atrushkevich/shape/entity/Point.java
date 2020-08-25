@@ -1,6 +1,5 @@
 package by.atrushkevich.shape.entity;
 
-
 import static by.atrushkevich.shape.generator.IdGenerator.generateId;
 
 public class Point {
