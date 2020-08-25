@@ -11,8 +11,6 @@ e
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 n
 >src/main/java/by/atrushkevich/shape/generator/IdGenerator.java,1\6\168796e4c9e3c7d2e822706e4c538c4ffd50a544
-V
-&src/main/resources/data/parameters.txt,8\8\8826b4fc9074ebc67c6b3eb250d414919225cd2e
 m
 =src/test/java/by/atrushkevich/shape/entity/RectangleTest.java,7\7\7755d52133b4f0c5d169bbcce9ee735124bf82f6
 s
@@ -31,3 +29,5 @@ m
 =src/main/java/by/atrushkevich/shape/creator/PointCreator.java,4\8\48fbc2d0e2f2e1eb6539a65b721445bafbc09c8e
 r
 Bsrc/main/java/by/atrushkevich/shape/creator/QuadrangleCreator.java,9\9\99334b65f18c360c66c80fd68d83a3c2edb7d87a
+>
+src/log4j2.xml,1\c\1cf906b37b429e2cd3ffc010578e1569ae4d847f

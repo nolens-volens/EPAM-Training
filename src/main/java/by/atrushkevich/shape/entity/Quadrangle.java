@@ -11,9 +11,6 @@ public class Quadrangle {
     private Point d;
 
     public Quadrangle() {
-        /* Here I'd like to realise auto generate of Points value
-         during Shape creating
-         */
     }
 
     public Quadrangle(Point a, Point b, Point c, Point d) {
