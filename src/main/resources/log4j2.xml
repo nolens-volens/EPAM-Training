@@ -1,32 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="warn">
-    <Properties>
-        <Property name="basePath">log</Property>
-    </Properties>
-
+<Configuration strict="true" name="XMLConfigTest">
     <Appenders>
-        <RollingFile name="RollingFile" fileName="${basePath}/text.log"
-                     filePattern="${basePath}/text-%d{yyyy-MM-dd}.log">
+        <Console name="STDOUT">
             <PatternLayout>
-                <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %L - %msg%n</pattern>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </Console>
+        <RollingFile name="rollingFile"
+                     fileName="log/text.log"
+                     filePattern="log/app-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
             <Policies>
-                <TimeBasedTriggeringPolicy />
-                <SizeBasedTriggeringPolicy size="10 MB"/>
+                <TimeBasedTriggeringPolicy interval="1"/>
+                <SizeBasedTriggeringPolicy size="250 MB"/>
             </Policies>
-            <DefaultRolloverStrategy max="10"/>
         </RollingFile>
-
-        <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%-5level] %d{mm:ss.SSS} [%t] %L - %msg%n" />
-        </Console>
     </Appenders>
 
     <Loggers>
-        <Root level="debug">
-            <appender-ref ref="RollingFile" />
-            <appender-ref ref="Console" />
+        <Root level="DEBUG">
+            <AppenderRef ref="STDOUT"/>
+            <AppenderRef ref="rollingFile"/>
         </Root>
     </Loggers>
 </Configuration>
-

@@ -14,21 +14,20 @@ import java.util.stream.Collectors;
 
 public class DataReader {
 
-   static final Logger logger = LogManager.getLogger();
+    static final Logger logger = LogManager.getLogger();
 
-    public List<String> readData(String filePath) {
-        List<String> lines = null;
-        try (FileReader fileReader = new FileReader(filePath);
-             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-            lines = bufferedReader.lines().collect(Collectors.toList());
-        } catch (IOException e) {
-            logger.log(Level.ERROR, "File reading error", e);
-            try {
-                throw new ProjectException("File reading error: " + filePath, e);
-            } catch (ProjectException projectException) {
-                projectException.printStackTrace();
-            }
+    public List<String> readData(String filePath) throws ProjectException {
+        if (filePath == null) {
+            throw new ProjectException("No data to read.");
         }
+        List<String> lines = null;
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
+            lines = bufferedReader.lines()
+                    .collect(Collectors.toList());
+        } catch (IOException e) {
+            throw new ProjectException("File reading ERROR.", e);
+        }
+        logger.log(Level.INFO, "The file was read successfully.");
         return lines;
     }
 }
