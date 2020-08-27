@@ -12,8 +12,8 @@ public class DataValidator {
     List<String> validatedList = new ArrayList<>();
     static final String REGULAR_EXPRESSION = "^(\\s?\\d+\\.?(\\d*[\\s,]*)?){4}$";
 
-    public List<String> listValidator(List<String> lines) {
-        for (String s : lines) {
+    public List<String> listValidator(List<String> dataLines) {
+        for (String s : dataLines) {
             if (s.equals(REGULAR_EXPRESSION)) {
                 validatedList.add(s.trim());
             }

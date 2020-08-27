@@ -20,14 +20,13 @@ public class DataReader {
         if (filePath == null) {
             throw new ProjectException("No data to read.");
         }
-        List<String> lines = null;
+        List<String> dataLines;
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath))) {
-            lines = bufferedReader.lines()
-                    .collect(Collectors.toList());
+            dataLines = bufferedReader.lines().collect(Collectors.toList());
         } catch (IOException e) {
             throw new ProjectException("File reading ERROR.", e);
         }
         logger.log(Level.INFO, "The file was read successfully.");
-        return lines;
+        return dataLines;
     }
 }

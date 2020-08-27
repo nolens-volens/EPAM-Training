@@ -5,20 +5,20 @@ import static by.atrushkevich.shape.generator.IdGenerator.generateId;
 public class Quadrangle {
 
     private long quadrangleId;
-    private Point a;
-    private Point b;
-    private Point c;
-    private Point d;
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
+    private Point pointD;
 
     public Quadrangle() {
     }
 
     public Quadrangle(Point a, Point b, Point c, Point d) {
         this.quadrangleId = generateId();
-        this.a = a;
-        this.b = b;
-        this.c = c;
-        this.d = d;
+        this.pointA = a;
+        this.pointB = b;
+        this.pointC = c;
+        this.pointD = d;
     }
 
     public void setQuadrangleId(long quadrangleId) {
@@ -30,35 +30,35 @@ public class Quadrangle {
     }
 
     public Point getA() {
-        return a;
+        return pointA;
     }
 
     public void setA(Point a) {
-        this.a = a;
+        this.pointA = a;
     }
 
     public Point getB() {
-        return b;
+        return pointB;
     }
 
     public void setB(Point b) {
-        this.b = b;
+        this.pointB = b;
     }
 
     public Point getC() {
-        return c;
+        return pointC;
     }
 
     public void setC(Point c) {
-        this.c = c;
+        this.pointC = c;
     }
 
     public Point getD() {
-        return d;
+        return pointD;
     }
 
     public void setD(Point d) {
-        this.d = d;
+        this.pointD = d;
     }
 
     @Override
@@ -72,9 +72,9 @@ public class Quadrangle {
         }
 
         Quadrangle q = (Quadrangle) o;
-        return this.a == q.a && this.b == q.b
-                && this.c == q.c
-                && this.d == q.d
+        return this.pointA == q.pointA && this.pointB == q.pointB
+                && this.pointC == q.pointC
+                && this.pointD == q.pointD
                 && this.quadrangleId == q.quadrangleId;
     }
 
@@ -90,10 +90,10 @@ public class Quadrangle {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Quadrangle Id is: ").append(this.quadrangleId).append("\n");
-        sb.append("The Point a is: ").append(this.a).append("\n");
-        sb.append("The Point b is: ").append(this.b).append("\n");
-        sb.append("The Point c is: ").append(this.c).append("\n");
-        sb.append("The Point d is: ").append(this.d).append("\n");
+        sb.append("The Point a is: ").append(this.pointA).append("\n");
+        sb.append("The Point b is: ").append(this.pointB).append("\n");
+        sb.append("The Point c is: ").append(this.pointC).append("\n");
+        sb.append("The Point d is: ").append(this.pointD).append("\n");
         return sb.toString();
     }
 }
