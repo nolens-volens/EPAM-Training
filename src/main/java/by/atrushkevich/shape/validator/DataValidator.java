@@ -1,28 +1,16 @@
 package by.atrushkevich.shape.validator;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.regex.Pattern;
 
 public class DataValidator {
 
-    static final Logger logger = LogManager.getLogger();
-    List<String> validatedList = new ArrayList<>();
-    static final String REGULAR_EXPRESSION = "^(\\s?\\d+\\.?(\\d*[\\s,]*)?){4}$";
+    static final String REGULAR_EXPRESSION = "([\\s]*\\d+(\\.\\d+)?(?:\\s*,?\\s*|\\s+)){7}(\\d+(\\.\\d+)?[\\s]*)";
 
-    public List<String> listValidator(List<String> dataLines) {
-        for (String s : dataLines) {
-            if (s.equals(REGULAR_EXPRESSION)) {
-                validatedList.add(s.trim());
-            }
-        }
-        return validatedList;
+    private DataValidator() {
     }
 
-    public List<String> getValidatedList() {
-        return validatedList;
+    public static boolean isValidatedLine(String s) {
+        return Pattern.matches(REGULAR_EXPRESSION, s);
     }
-
 }
+

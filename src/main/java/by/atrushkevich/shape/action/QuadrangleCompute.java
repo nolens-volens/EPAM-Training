@@ -19,29 +19,4 @@ public class QuadrangleCompute {
         logger.log(Level.INFO, "The PERIMETER of the quadrangle is computed");
         return 0.0;
     }
-
-    public boolean isConvex(Quadrangle quadrangle) {
-        logger.log(Level.INFO, "Is the quadrangle convex");
-        return false;
-    }
-
-    public boolean isQuadrangle(Quadrangle quadrangle) {
-        logger.log(Level.INFO, "Do the points make up quadrangle");
-        return false;
-    }
-
-    public boolean isSquare(Quadrangle quadrangle) {
-        logger.log(Level.INFO, "Is the quadrangle a squares");
-        return false;
-    }
-
-    public boolean isRhombus(Quadrangle quadrangle) {
-        logger.log(Level.INFO, "Is the quadrangle a rhombus");
-        return false;
-    }
-
-    public boolean isTrapeze(Quadrangle quadrangle) {
-        logger.log(Level.INFO, "Is the quadrangle a trapeze");
-        return false;
-    }
 }

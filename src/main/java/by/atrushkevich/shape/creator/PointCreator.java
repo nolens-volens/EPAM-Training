@@ -1,17 +1,13 @@
-package by.atrushkevich.shape.creator.factory;
+package by.atrushkevich.shape.creator;
 
-import by.atrushkevich.shape.creator.ShapeFactory;
 import by.atrushkevich.shape.entity.Point;
-import by.atrushkevich.shape.generator.IdGenerator;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class PointCreator implements ShapeFactory<List<Point>, Double> {
+public class PointCreator {
 
-    public List<Point> create(List<Double> coordinatesForPointsList) {
+    public List<Point> createPoint(List<Double> coordinatesForPointsList) {
         List<Point> pointsForQuadrangle = new ArrayList<>();
         Point point;
         for (int i = 1; i < coordinatesForPointsList.size(); i = i + 2) {
