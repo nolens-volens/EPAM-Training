@@ -25,9 +25,9 @@ public class Main {
             System.out.println(s);
         }
 
-        List<String> list1 = dataParser.parseToDouble(list);
+        List<Double[]> list1 = dataParser.parseToDouble(list);
 
-        for (String d : list1) {
+        for (Double[] d : list1) {
             System.out.println(d);
         }
     }

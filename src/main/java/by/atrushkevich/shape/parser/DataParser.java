@@ -10,17 +10,42 @@ public class DataParser {
 
     private static final String REGEX_DELIMITER = "\\s+";
 
-    public List<String> parseToDouble(List<String> dataLines) {
+    public List<Double[]> parseToDouble(List<String> dataLines) {
         List<String> validatedLines = new ArrayList<>();
         for (String line : dataLines) {
-            String[] linesArray = line.split(REGEX_DELIMITER);
-            List<String> linesList = Arrays.asList(linesArray);
-            for (String string : linesList) {
-                if (isValidatedLine(string)) {
-                    validatedLines.add(string);
-                }
+            if (isValidatedLine(line)) {
+                validatedLines.add(line);
             }
         }
-        return validatedLines;
+
+        Double[] arrayDouble = new Double[8];
+        ArrayList<Double[]> listDouble = new ArrayList<>();
+        String[] linesArray;
+        for (String line : validatedLines) {
+            for (int i = 0; i < validatedLines.size(); i++) {
+                linesArray = line.trim().split(REGEX_DELIMITER);
+                arrayDouble[i] = Double.parseDouble(Arrays.toString(linesArray));
+                listDouble.add(i, arrayDouble);
+            }
+        }
+        return listDouble;
     }
+
+
+//    public List<String[]> parseToDouble(List<String> dataLines) {
+//        List<String> validatedLines = new ArrayList<>();
+//
+//        for (String line : dataLines) {
+//            if (isValidatedLine(line)) {
+//                validatedLines.add(line);
+//            }
+//        }
+//
+//       List<String[]> listValidatedString = new ArrayList<>();
+//        for (String line : validatedLines) {
+//            listValidatedString.add(line.trim().split(REGEX_DELIMITER));
+//        }
+//        return listValidatedString;
+//    }
 }
+
