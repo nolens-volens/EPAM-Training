@@ -15,6 +15,8 @@ public class Main {
     static Logger logger = LogManager.getLogger();
 
     public static void main(String[] args) throws ProjectException {
+
+
         DataReader dataReader = new DataReader();
         DataParser dataParser = new DataParser();
         logger.log(Level.INFO, "bla bal");
@@ -28,7 +30,10 @@ public class Main {
         List<Double[]> list1 = dataParser.parseToDouble(list);
 
         for (Double[] d : list1) {
-            System.out.println(d);
+            System.out.println("");
+           for (Double a : d) {
+                System.out.print(a + " ");
+            }
         }
     }
 }
