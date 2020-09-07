@@ -1,26 +1,28 @@
 package by.atrushkevich.shape.parser;
 
-import java.util.ArrayList;
+import by.atrushkevich.shape.validator.DataValidator;
+
 import java.util.Arrays;
 import java.util.List;
 
-import static by.atrushkevich.shape.validator.DataValidator.isValidatedLine;
+import static java.util.stream.Collectors.toList;
 
 public class DataParser {
 
     private static final String REGEX_DELIMITER = "\\s+";
 
-    public List<String> parseToDouble(List<String> dataLines) {
-        List<String> validatedLines = new ArrayList<>();
-        for (String line : dataLines) {
-            String[] linesArray = line.split(REGEX_DELIMITER);
-            List<String> linesList = Arrays.asList(linesArray);
-            for (String string : linesList) {
-                if (isValidatedLine(string)) {
-                    validatedLines.add(string);
-                }
-            }
-        }
-        return validatedLines;
+    public List<Double[]> parseToDoubleArraysList(List<String> dataLines) {
+        return dataLines.stream()
+                .filter(DataValidator::isValidatedLine)
+                .map(this::parseToDoubleArray)
+                .collect(toList());
+    }
+
+    private Double[] parseToDoubleArray(String line) {
+        return Arrays.stream(line.trim().split(REGEX_DELIMITER))
+                .map(Double::parseDouble)
+                .toArray(Double[]::new);
     }
 }
+
+
