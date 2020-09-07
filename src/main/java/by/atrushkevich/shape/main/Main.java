@@ -7,6 +7,8 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 
 
@@ -14,26 +16,31 @@ public class Main {
 
     static Logger logger = LogManager.getLogger();
 
-    public static void main(String[] args) throws ProjectException {
+    public static void main(String[] args) throws ProjectException, IOException {
+
+
 
 
         DataReader dataReader = new DataReader();
         DataParser dataParser = new DataParser();
         logger.log(Level.INFO, "bla bal");
 
-        List<String> list = dataReader.readData("src\\main\\resources\\data\\parameters.txt");
+        List<String> list = dataReader.creation(Paths.get("src/main/resources/data/parameters.txt"));
 
         for (String s : list) {
             System.out.println(s);
         }
 
-        List<Double[]> list1 = dataParser.parseToDouble(list);
+        List<Double[]> list1 = dataParser.parseToDoubleArraysList(list);
+
 
         for (Double[] d : list1) {
             System.out.println("");
-           for (Double a : d) {
+            for (Double a : d) {
                 System.out.print(a + " ");
             }
+
         }
+
     }
 }

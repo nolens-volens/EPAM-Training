@@ -8,7 +8,7 @@ import org.apache.logging.log4j.Logger;
 
 public class QuadrangleCompute {
 
-    static final Logger logger = LogManager.getLogger();
+   static final Logger logger = LogManager.getLogger();
 
     public double areaCompute(Quadrangle quadrangle) {
         logger.log(Level.INFO, "The AREA of the quadrangle is computed");

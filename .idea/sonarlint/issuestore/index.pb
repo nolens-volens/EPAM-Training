@@ -43,3 +43,13 @@ v
 Fsrc/main/java/by/atrushkevich/shape/validator/QuadrangleValidator.java,1\8\1880b87f32d619a343bd99d5f2a602aa874a7acb
 b
 2src/main/java/by/atrushkevich/shape/main/Main.java,a\c\acb2cf46690e65433631b9ef13329d8cc806aae8
+a
+1src/main/java/by/atrushkevich/composite/Word.java,7\1\7156b8ef07fcd25eaf970cec6a6fe33fac8089ab
+a
+1src/main/java/by/atrushkevich/composite/Text.java,a\c\ac092095360c0749aefe4151417258aa3bea33d7
+f
+6src/main/java/by/atrushkevich/composite/Paragraph.java,4\8\48b103b986500d080f3e866dd7a9351ce18f14bf
+e
+5src/main/java/by/atrushkevich/composite/Sentence.java,4\3\43edfbfe63195280a24599370f58010a86f1854c
+c
+3src/main/java/by/atrushkevich/composite/Letter.java,b\4\b4804312dca829253d9eb7c88c895d79997c8585

@@ -11,54 +11,18 @@ public class DataParser {
 
     private static final String REGEX_DELIMITER = "\\s+";
 
-    public List<Double[]> parseToDouble(List<String> dataLines) {
+    public List<Double[]> parseToDoubleArraysList(List<String> dataLines) {
         return dataLines.stream()
                 .filter(DataValidator::isValidatedLine)
-                .map(this::parseToDoubles)
+                .map(this::parseToDoubleArray)
                 .collect(toList());
     }
 
-    private Double[] parseToDoubles(String line) {
+    private Double[] parseToDoubleArray(String line) {
         return Arrays.stream(line.trim().split(REGEX_DELIMITER))
                 .map(Double::parseDouble)
                 .toArray(Double[]::new);
     }
-
-//    public List<Double[]> parseToDouble(List<String> dataLines) {
-//        List<String> validatedLines = new ArrayList<>();
-//        for (String line : dataLines) {
-//            if (isValidatedLine(line)) {
-//                validatedLines.add(line);
-//            }
-//        }
-//
-//        Double[] arrayDoubleDataPoints = new Double[8];
-//        ArrayList<Double[]> listArrayDoubleDataPoints = new ArrayList<>();
-//        String[] linesArray;
-//        for (String line : validatedLines) {
-//            for (int i = 0; i < validatedLines.size(); i++) {
-//                linesArray = line.trim().split(REGEX_DELIMITER);
-//                arrayDoubleDataPoints[i] = Double.parseDouble(String.valueOf(linesArray));
-//                listArrayDoubleDataPoints.add(i, arrayDoubleDataPoints);
-//            }
-//        }
-//        return listArrayDoubleDataPoints;
-//    }
 }
 
-//    public List<String[]> parseToDouble(List<String> dataLines) {
-//        List<String> validatedLines = new ArrayList<>();
-//
-//        for (String line : dataLines) {
-//            if (isValidatedLine(line)) {
-//                validatedLines.add(line);
-//            }
-//        }
-//
-//       List<String[]> listValidatedString = new ArrayList<>();
-//        for (String line : validatedLines) {
-//            listValidatedString.add(line.trim().split(REGEX_DELIMITER));
-//        }
-//        return listValidatedString;
-//    }
 
