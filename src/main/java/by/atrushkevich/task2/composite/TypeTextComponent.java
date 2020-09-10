@@ -1,6 +1,6 @@
 package by.atrushkevich.task2.composite;
 
-public enum TypeOfTextComponent {
+public enum TypeTextComponent {
     TEXT,
     PARAGRAPH,
     SENTENCE,

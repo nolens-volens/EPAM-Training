@@ -1,16 +1,18 @@
 package by.atrushkevich.task2.composite.impl;
 
 import by.atrushkevich.task2.composite.TextComponent;
-import by.atrushkevich.task2.composite.TypeOfTextComponent;
+import by.atrushkevich.task2.composite.TypeTextComponent;
+
+import java.util.List;
 
 
 public class Symbol implements TextComponent {
 
-    enum SymbolType {
-        PUNCTUATION_MARK, LETTER;
+    public enum SymbolType {
+        PUNCTUATION_MARK, LETTER
     }
 
-    private final TypeOfTextComponent textComponent = TypeOfTextComponent.SYMBOL;
+    private final TypeTextComponent textComponent = TypeTextComponent.SYMBOL;
 
     private char element;
     private SymbolType symbolType;
@@ -22,8 +24,13 @@ public class Symbol implements TextComponent {
     }
 
     @Override
-    public TypeOfTextComponent getComponentType() {
-        return TypeOfTextComponent.SYMBOL;
+    public TypeTextComponent getComponentType() {
+        return TypeTextComponent.SYMBOL;
+    }
+
+    @Override
+    public List<TextComponent> getComponents() {
+        throw new UnsupportedOperationException("Method is not supported");
     }
 
     @Override
@@ -39,6 +46,28 @@ public class Symbol implements TextComponent {
     @Override
     public TextComponent getChild(int index) {
         throw new UnsupportedOperationException("Method is not supported");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+
+        if (getClass() != o.getClass()) {
+            return false;
+        }
+
+        Symbol symbol = (Symbol) o;
+        return this.symbolType.equals(symbol.symbolType);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        final int prime = 31;
+        hash =(prime * hash + this.symbolType.hashCode());
+        return hash;
     }
 
     @Override
