@@ -7,15 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TextComposite implements TextComponent {
-    private List<TextComponent> elements;
+    private List<TextComponent> elements = new ArrayList<>();
     private TypeOfTextComponent nameTextElement;
 
 
-    public TextComposite(TypeOfTextComponent typeOfTextComponent) {
+    public TextComposite(List<TextComponent> elements, TypeOfTextComponent typeOfTextComponent) {
+        this.elements = elements;
         this.nameTextElement = typeOfTextComponent;
-        this.elements = new ArrayList<>();
-
     }
+
 
     @Override
     public TextComponent getChild(int index) {

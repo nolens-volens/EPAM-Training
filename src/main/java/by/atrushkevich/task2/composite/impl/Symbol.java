@@ -10,6 +10,8 @@ public class Symbol implements TextComponent {
         PUNCTUATION_MARK, LETTER;
     }
 
+    private final TypeOfTextComponent textComponent = TypeOfTextComponent.SYMBOL;
+
     private char element;
     private SymbolType symbolType;
 

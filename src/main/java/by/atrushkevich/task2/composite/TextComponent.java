@@ -10,4 +10,5 @@ public interface TextComponent {
 
     TypeOfTextComponent getComponentType();
 
+    String toString();
 }
